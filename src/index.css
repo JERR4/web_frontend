@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8ee;
+}
+
+.btn-outline-dark {
+  background-color: #212539 !important; /* Фоновый цвет */
+  color: #fff !important; /* Цвет текста */
+  border-color: #fff !important; /* Цвет границы */
+}
+
+.btn-outline-dark:hover {
+  background-color: #ffffff !important; /* Цвет фона при наведении */
+  color: #212539 !important; /* Цвет текста при наведении */
+  border-color: #000 !important; /* Цвет границы при наведении */
+}
+

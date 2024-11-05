@@ -1,0 +1,47 @@
+.custom-container {
+    font-family: Arial, sans-serif;
+    padding-top: 66px;
+    background-color: #FFF8EE;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.crumbs {
+    padding-left: 40px;
+}
+
+.data {
+    padding: 0 20px 20px 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.data h2 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.containerLoading {
+    filter: blur(8px);
+}
+
+.body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    padding-left: 50px;
+    padding-right: 50px;
+}
