@@ -5,5 +5,5 @@
 - [База данных (лаб 2)](https://github.com/JERR4/web_backend/tree/lab2-ORM)
 - [Веб-сервис REST-API (лаб 3)](https://github.com/JERR4/web_backend/tree/lab3-API)
 - [Аутентификация и авторизация (лаб 4)](https://github.com/JERR4/web_backend/tree/lab4-auth)
-# [Фронтенд](https://github.com/JERR4/web_frontend):
+# [Фронтенд](https://github.com/JERR4/web_frontend)
 - [SPA (лаб 5)](https://github.com/JERR4/web_frontend/tree/lab5-SPA)
