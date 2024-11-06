@@ -6,10 +6,7 @@ import "./HomePage.css";
 
 export const HomePage: FC = () => {
   useEffect(() => {
-    // Запрещаем прокрутку на этой странице
     document.body.style.overflow = "hidden";
-
-    // Восстанавливаем прокрутку, когда компонент размонтируется
     return () => {
       document.body.style.overflow = "auto";
     };

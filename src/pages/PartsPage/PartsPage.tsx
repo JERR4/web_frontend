@@ -40,60 +40,73 @@ const PartsPage: FC = () => {
     navigate(`${ROUTES.PARTS}/${id}`);
   };
 
-  // useEffect для выполнения запроса при первом рендере
   useEffect(() => {
     handleSearch();
   }, []);
 
   return (
     <div className="custom-container">
-      <Row className="align-items-center">
-        <Col md={4}>
-          <div className="crumbs">
-            <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
-          </div>
-        </Col>
-        <Col md={4} className="text-center">
-          <h2>Комплектующие</h2>
-        </Col>
-        <Col md={4}></Col>
-      </Row>
-      <div className="data">
-        <div className="input">
-          <InputField
-            value={partName}
-            placeholder="Введите название"
-            setValue={(value) => setPartName(value)}
-            loading={loading}
-            onSubmit={handleSearch}
-          />
-        </div>
-        {loading && (
-          <div className="loadingBg">
-            <Spinner animation="border" />
-          </div>
-        )}
-  
-        {!loading && (
-          !parts.length ? (
-            <div>
-              <h1>К сожалению, пока ничего не найдено :(</h1>
+      <div className="parts-data">
+          <Row className="align-items-center">
+            <Col md={4}>
+              <div className="crumbs">
+                <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
+              </div>
+            </Col>
+            <Col md={4} className="text-center">
+              <h2>Комплектующие</h2>
+            </Col>
+            <Col md={4} className="d-flex justify-content-end">
+              <div className="orders-button">
+                <button type="submit" className="btn btn-outline-dark">
+                  В обработке
+                </button>
+                <span 
+                  className="position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                  style={{ backgroundColor: "#3f8dfb" }}
+                >
+                  3
+                </span>
+              </div>
+            </Col>
+          </Row>
+          <div className="data">
+            <div className="input">
+              <InputField
+                value={partName}
+                placeholder="Введите название"
+                setValue={(value) => setPartName(value)}
+                loading={loading}
+                onSubmit={handleSearch}
+              />
             </div>
-          ) : (
-            <div className="cards">
-              <Row className="g-2">
-                {parts.map((item) => (
-                  <Col key={item.id} xs={12} md={6}>
-                    <PartCard
-                      imageClickHandler={() => handleCardClick(item.id)}
-                      {...item}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          )
-        )}
+            {loading && (
+              <div className="loadingBg">
+                <Spinner animation="border" />
+              </div>
+            )}
+      
+            {!loading && (
+              !parts.length ? (
+                <div>
+                  <h1>К сожалению, пока ничего не найдено</h1>
+                </div>
+              ) : (
+                <div className="cards">
+                  <Row className="g-2">
+                    {parts.map((item) => (
+                      <Col key={item.id} xs={12} md={6}>
+                        <PartCard
+                          imageClickHandler={() => handleCardClick(item.id)}
+                          {...item}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </div>
+              )
+            )}
+          </div>
       </div>
       <Footer />
     </div>

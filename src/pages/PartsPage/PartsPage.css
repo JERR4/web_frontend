@@ -7,20 +7,26 @@
     flex-direction: column;
 }
 
-.crumbs {
-    padding-left: 40px;
+.orders-button {
+    position: relative;
+    margin-left: auto;
 }
 
-.data {
-    padding: 0 20px 20px 20px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+.parts-data {
+    min-height: 83.3vh; 
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 20px;
 }
 
 .footer {
     margin-top: auto;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .data h2 {
@@ -39,9 +45,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.cards {
-    padding-left: 50px;
-    padding-right: 50px;
 }

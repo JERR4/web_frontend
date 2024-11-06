@@ -4,10 +4,6 @@
   min-height: 100vh; 
 }
 
-.breadcrumbs-wrapper {
-  padding-left: 40px;
-}
-
 .part_page_loader_block {
   display: flex;
   justify-content: center;

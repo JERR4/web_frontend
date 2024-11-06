@@ -30,16 +30,14 @@ export const PartPage: FC = () => {
 
   return (
     <div className="custom-container">
-      <div className="breadcrumbs-wrapper">
+      {pageData ? ( // проверка на наличие данных, иначе загрузка
+      <div className="in-part-page"> 
         <BreadCrumbs
           crumbs={[
             { label: ROUTE_LABELS.PARTS, path: ROUTES.PARTS },
             { label: pageData?.part_name || "Деталь" },
           ]}
         />
-      </div>
-      {pageData ? ( // проверка на наличие данных, иначе загрузка
-      <div className="in-part-page"> 
         <Row>
           <Col xs={12}>
             <h2 className="in-part-name">
