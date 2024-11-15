@@ -8,9 +8,9 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/web_frontend/images/logo.png",
-        "type": "image/png", 
-        "sizes": "192x192"
+        "src": "/web_frontend/images/icon.png",
+        "type": "image/png",
+        "sizes": "1024x1024"
       }
     ]
-  }
+}
