@@ -1,0 +1,46 @@
+.part-card {
+    font-family: "Inter", "Source Sans Pro", "Helvetica";
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  .part-photo {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .part-details a {
+    text-decoration: none;
+  }
+  
+  .part-details h5 {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .card-title:hover {
+    font-weight: bold; /* Делает текст жирным при наведении */
+  }
+  
+  /* Описание детали */
+  .part-details {
+    padding-left: 20px;
+  }
+  
+  /* Оформление заголовков и текста */
+  .card-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin-bottom: 8px;
+  }
