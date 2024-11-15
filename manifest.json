@@ -1,6 +1,6 @@
 {
-    "name": "Tile Notes",
-    "short_name": "Tile Notes",
+    "name": "Parts Storage",
+    "short_name": "Parts Storage",
     "start_url": "/web_frontend/",
     "display": "standalone",
     "background_color": "#fdfdfd",
