@@ -8,18 +8,37 @@ import { ROUTES, ROUTE_LABELS } from "../../Routes";
 import { PartCard } from "../../components/PartCard/PartCard";
 import { useNavigate } from "react-router-dom";
 import Footer from '../../components/footer/footer';
+import { setTitle, clearTitle, useTitle } from '../../slices/partsSlice';
 import { PARTS_MOCK } from "../../modules/mock";
+import { useDispatch } from "react-redux";
 
 const PartsPage: FC = () => {
+  const dispatch = useDispatch();
   const [partName, setPartName] = useState("");
   const [loading, setLoading] = useState(false);
   const [parts, setParts] = useState<PartResult["parts"]>([]);
-
+  const selectedTitle = useTitle();
+  
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  useEffect(() => {
+    if (selectedTitle) {
+      setPartName(selectedTitle);
+      handleSearch(selectedTitle);
+    } else {
+      handleSearch('');
+    }
+  }, [selectedTitle]);
+
+  const handleSearch = (searchTerm: string) => {
     setLoading(true);
-    getPartsByName(partName)
+    if (searchTerm) {
+      dispatch(setTitle(searchTerm));
+    } else {
+      dispatch(clearTitle());
+    }
+
+    getPartsByName(searchTerm)
       .then((response) => {
         setParts(response.parts);
         setLoading(false);
@@ -29,7 +48,7 @@ const PartsPage: FC = () => {
           PARTS_MOCK.parts.filter((item) =>
             item.part_name
               .toLocaleLowerCase()
-              .startsWith(partName.toLocaleLowerCase())
+              .startsWith(searchTerm.toLocaleLowerCase())
           )
         );
         setLoading(false);
@@ -40,73 +59,84 @@ const PartsPage: FC = () => {
     navigate(`${ROUTES.PARTS}/${id}`);
   };
 
-  useEffect(() => {
-    handleSearch();
-  }, []);
+  const handleSubmit = () => {
+    handleSearch(partName);
+  };
 
   return (
     <div className="custom-container">
       <div className="parts-data">
-          <Row className="align-items-center">
-            <Col md={4}>
-              <div className="crumbs">
-                <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
-              </div>
-            </Col>
-            <Col md={4} className="text-center">
-              <h2>Комплектующие</h2>
-            </Col>
-            <Col md={4} className="d-flex justify-content-end">
-              <div className="orders-button">
-                <button type="submit" className="btn btn-outline-dark">
-                  В обработке
-                </button>
-                <span 
-                  className="position-absolute top-0 start-100 translate-middle badge rounded-pill" 
-                  style={{ backgroundColor: "#3f8dfb" }}
-                >
-                  3
-                </span>
-              </div>
-            </Col>
-          </Row>
-          <div className="data">
-            <div className="input">
-              <InputField
-                value={partName}
-                placeholder="Введите название"
-                setValue={(value) => setPartName(value)}
-                loading={loading}
-                onSubmit={handleSearch}
-              />
+        <Row className="align-items-center">
+          <Col md={4}>
+            <div className="crumbs">
+              <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
             </div>
-            {loading && (
-              <div className="loadingBg">
-                <Spinner animation="border" />
+          </Col>
+          <Col md={4} className="header-truck">
+            <h2>Комплектующие</h2>
+            <div className="truck">
+              <div className="truck-bg">
+                <img src="/web_frontend/images/truck.png" alt="Грузовик" className="truck-icon"/>
               </div>
-            )}
-      
-            {!loading && (
-              !parts.length ? (
-                <div>
-                  <h1>К сожалению, пока ничего не найдено</h1>
-                </div>
-              ) : (
-                <div className="cards">
-                  <Row className="g-2">
-                    {parts.map((item) => (
-                      <Col key={item.id} xs={12} md={6}>
-                        <PartCard
-                          imageClickHandler={() => handleCardClick(item.id)}
-                          {...item}
-                        />
-                      </Col>
-                    ))}
-                  </Row>
-                </div>
-              )
-            )}
+              <span 
+                className="truck-pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                style={{ backgroundColor: "#3f8dfb" }}
+              >
+                3
+              </span>
+            </div>
+          </Col>
+          <Col md={4} className="shipment button d-flex justify-content-end">
+            <div className="orders-button">
+              <button type="submit" className="btn btn-outline-dark">
+                В обработке
+              </button>
+              <span 
+                className="pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
+                style={{ backgroundColor: "#3f8dfb" }}
+              >
+                3
+              </span>
+            </div>
+          </Col>
+        </Row>
+        <div className="data">
+          <div className="input">
+            <InputField
+              value={partName}
+              placeholder="Введите название"
+              setValue={setPartName} 
+              loading={loading}
+              onSubmit={handleSubmit}
+            />
           </div>
+          {loading && (
+            <div className="loadingBg">
+              <Spinner animation="border" />
+            </div>
+          )}
+
+          {!loading && (
+            !parts.length ? (
+              <div>
+                <h1>К сожалению, пока ничего не найдено</h1>
+              </div>
+            ) : (
+              <div className="cards">
+                <Row className="g-2 p-0">
+                  {parts.map((item) => (
+                    <Col key={item.id} lg={12} xl={6}>
+                      <PartCard
+                        imageClickHandler={() => handleCardClick(item.id)}
+                        {...item}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            )
+          )}
+        </div>
       </div>
       <Footer />
     </div>

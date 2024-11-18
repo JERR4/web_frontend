@@ -1,0 +1,16 @@
+{
+    "name": "Parts Storage",
+    "short_name": "Parts Storage",
+    "start_url": "/web_frontend/",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/web_frontend/images/icon.png",
+        "type": "image/png",
+        "sizes": "1024x1024"
+      }
+    ]
+}

@@ -26,6 +26,7 @@
 }
 
 .in-part-content {
+  display: flex; 
   margin-top: 20px;
 }
 
@@ -58,7 +59,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 10px;
 }
 
 .in-part-info-details {
@@ -69,4 +69,16 @@
 
 .in-part-info-details p {
   margin: 0;
+}
+
+@media (max-width: 1150px) {
+  .in-part-page {
+    padding: 0 50px 10px 50px;
+  }
+}
+
+@media (max-width: 675px) {
+  .in-part-page{
+    padding: 0 30px 10px 30px;
+  }
 }

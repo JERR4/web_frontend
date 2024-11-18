@@ -15,7 +15,7 @@ export const HomePage: FC = () => {
   return (
     <div className="home">
       <video className="background-video" autoPlay loop muted>
-        <source src="video/background.mp4" type="video/mp4" />
+        <source src="/web_frontend/video/background.mp4" type="video/mp4" />
         Ваш браузер не поддерживает видео.
       </video>
       <div className="overlay" />
@@ -32,7 +32,12 @@ export const HomePage: FC = () => {
         </Link>
       </div>
       <footer className="home-page-custom-footer">
-        2024 Склад комплектующих. Все права защищены.
+        <span className="footer-text full-text">
+          2024 Склад комплектующих. Все права защищены.
+        </span>
+        <span className="footer-text break-text">
+          2024 Склад комплектующих.<br />Все права защищены.
+        </span>
       </footer>
     </div>
   );

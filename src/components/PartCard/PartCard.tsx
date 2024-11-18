@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "./PartCard.css";
-const defaultImage = "/images/DefaultImage.webp";
+const defaultImage = "/web_frontend/images/DefaultImage.webp";
 
 interface PartCardProps {
   part_name: string;

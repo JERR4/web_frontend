@@ -26,21 +26,30 @@
     text-decoration: none;
   }
   
-  .card-title:hover {
-    font-weight: bold; /* Делает текст жирным при наведении */
+  .part-details p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
-  /* Описание детали */
-  .part-details {
-    padding-left: 20px;
-  }
-  
-  /* Оформление заголовков и текста */
   .card-title {
     font-size: 22px;
     margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .card-text {
     margin-bottom: 8px;
   }
+
+  @media (max-width: 675px) {
+    .part-card  {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0
+    }
+
+    .part-photo, .part-details {
+        width: 100%;
+    }
+}

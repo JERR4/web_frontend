@@ -46,7 +46,7 @@ export const PartPage: FC = () => {
             <div className="in-part-oem">OEM: {pageData.oem_number}</div>
             <hr />
             <p className="in-part-description">{pageData.short_description}</p>
-            <Row className="in-part-content">
+            <Row className="in-part-content g-2">
               <Col md={6}>
                 <img
                   className="in-part-image"

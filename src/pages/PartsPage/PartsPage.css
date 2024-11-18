@@ -5,11 +5,20 @@
     min-height: 100vh; 
     display: flex; 
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .orders-button {
     position: relative;
     margin-left: auto;
+}
+
+.truck {
+    display: none;
+}
+
+.header-truck {
+    text-align: center;
 }
 
 .parts-data {
@@ -45,4 +54,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1150px) {
+    .parts-data {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 770px) {
+    .header-truck {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .truck {
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .truck-bg {
+        height: 40px;
+        width: 50px;
+        background-color: #212539;
+        border-radius: 4px;
+    }
+
+    .truck-icon {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .shipment button,
+    .shipment .pill {
+        display: none;
+    }
+}
+
+@media (max-width: 675px) {
+    .parts-data {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
