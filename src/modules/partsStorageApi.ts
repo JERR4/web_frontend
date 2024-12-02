@@ -33,7 +33,7 @@ export const getPartsByName = async (name = ""): Promise<PartResult> => {
 };
 
 export const getPartById = async (partId: number | string): Promise<Part> => {
-  return fetch(`/api/parts/${encodeURIComponent(partId)}`)
+  return fetch(`/api/parts/${encodeURIComponent(partId)}/`)
     .then((response) => response.json())
     .then((part: Part) => {
       const apiUrl = getApiUrl();

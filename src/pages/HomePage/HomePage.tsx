@@ -1,7 +1,4 @@
 import { FC, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../Routes";
-import { Button } from "react-bootstrap";
 import "./HomePage.css"; 
 
 export const HomePage: FC = () => {
@@ -27,9 +24,6 @@ export const HomePage: FC = () => {
           Упростите складские операции и повысите эффективность работы с
           комплектующими
         </p>
-        <Link to={ROUTES.PARTS}>
-          <Button variant="light" className="btn-transparent">Просмотр комплектующих</Button>
-        </Link>
       </div>
       <footer className="home-page-custom-footer">
         <span className="footer-text full-text">

@@ -16,18 +16,14 @@ const partsSlice = createSlice({
     reducers: {
         setTitle(state: PartsState, action: PayloadAction<string>) {
             state.title = action.payload;
-        },
-        clearTitle(state: PartsState) {
-            state.title = '';
-        },
+        }
     },
 });
 
 export const useTitle = () => useSelector((state: RootState) => state.parts.title);
 
 export const {
-    setTitle,
-    clearTitle,
+    setTitle
 } = partsSlice.actions;
 
 export default partsSlice.reducer;

@@ -8,7 +8,7 @@ import { ROUTES, ROUTE_LABELS } from "../../Routes";
 import { PartCard } from "../../components/PartCard/PartCard";
 import { useNavigate } from "react-router-dom";
 import Footer from '../../components/footer/footer';
-import { setTitle, clearTitle, useTitle } from '../../slices/partsSlice';
+import { setTitle, useTitle } from '../../slices/partsSlice';
 import { PARTS_MOCK } from "../../modules/mock";
 import { useDispatch } from "react-redux";
 
@@ -24,19 +24,20 @@ const PartsPage: FC = () => {
   useEffect(() => {
     if (selectedTitle) {
       setPartName(selectedTitle);
+    }
+  }, [selectedTitle]);
+
+  useEffect(() => {
+    if (selectedTitle) {
       handleSearch(selectedTitle);
     } else {
       handleSearch('');
     }
-  }, [selectedTitle]);
+  }, []);
 
   const handleSearch = (searchTerm: string) => {
     setLoading(true);
-    if (searchTerm) {
-      dispatch(setTitle(searchTerm));
-    } else {
-      dispatch(clearTitle());
-    }
+    dispatch(setTitle(searchTerm));
 
     getPartsByName(searchTerm)
       .then((response) => {
@@ -56,7 +57,7 @@ const PartsPage: FC = () => {
   };
 
   const handleCardClick = (id: number) => {
-    navigate(`${ROUTES.PARTS}/${id}`);
+    navigate(`${ROUTES.PARTS}/${id}/`);
   };
 
   const handleSubmit = () => {
@@ -66,40 +67,15 @@ const PartsPage: FC = () => {
   return (
     <div className="custom-container">
       <div className="parts-data">
-        <Row className="align-items-center">
-          <Col md={4}>
+        <div className="head">
             <div className="crumbs">
-              <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
+                <BreadCrumbs crumbs={[{ label: ROUTE_LABELS.PARTS }]} />
             </div>
-          </Col>
-          <Col md={4} className="header-truck">
-            <h2>Комплектующие</h2>
-            <div className="truck">
-              <div className="truck-bg">
-                <img src="/web_frontend/images/truck.png" alt="Грузовик" className="truck-icon"/>
-              </div>
-              <span 
-                className="truck-pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
-                style={{ backgroundColor: "#3f8dfb" }}
-              >
-                3
-              </span>
+            <div className="line">
+                <hr></hr>
             </div>
-          </Col>
-          <Col md={4} className="shipment button d-flex justify-content-end">
-            <div className="orders-button">
-              <button type="submit" className="btn btn-outline-dark">
-                В обработке
-              </button>
-              <span 
-                className="pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
-                style={{ backgroundColor: "#3f8dfb" }}
-              >
-                3
-              </span>
-            </div>
-          </Col>
-        </Row>
+            <h2 className="title">Комплектующие</h2>
+        </div>
         <div className="data">
           <div className="input">
             <InputField
