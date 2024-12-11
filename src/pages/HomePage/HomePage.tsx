@@ -1,7 +1,5 @@
 import { FC, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../Routes";
-import { Button } from "react-bootstrap";
+import {dest_root} from "../../../target_config"
 import "./HomePage.css"; 
 
 export const HomePage: FC = () => {
@@ -15,7 +13,7 @@ export const HomePage: FC = () => {
   return (
     <div className="home">
       <video className="background-video" autoPlay loop muted>
-        <source src="/web_frontend/video/background.mp4" type="video/mp4" />
+        <source src={`${dest_root}/video/background.mp4`} type="video/mp4" />
         Ваш браузер не поддерживает видео.
       </video>
       <div className="overlay" />

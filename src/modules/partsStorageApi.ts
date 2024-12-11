@@ -1,3 +1,5 @@
+import { dest_api} from "../../target_config"
+
 export interface Part {
   id: number;
   part_name: string;
@@ -19,7 +21,7 @@ const getApiUrl = () => {
 }
 
 export const getPartsByName = async (name = ""): Promise<PartResult> => {
-  return fetch(`/api/parts/search/?part_name=${encodeURIComponent(name)}`)
+  return fetch(`${dest_api}/parts/search/?part_name=${encodeURIComponent(name)}`)
     .then((response) => response.json())
     .then((data) => ({
       parts: Array.isArray(data.parts) 
@@ -33,7 +35,7 @@ export const getPartsByName = async (name = ""): Promise<PartResult> => {
 };
 
 export const getPartById = async (partId: number | string): Promise<Part> => {
-  return fetch(`/api/parts/${encodeURIComponent(partId)}`)
+  return fetch(`${dest_api}/parts/${encodeURIComponent(partId)}/`)
     .then((response) => response.json())
     .then((part: Part) => {
       const apiUrl = getApiUrl();

@@ -4,7 +4,7 @@ export const PARTS_MOCK: PartResult = {
     parts:[
         {
             id: 1,
-            image: '/web_frontend/images/1.jpg',
+            image: '/images/1.jpg',
             part_name: 'БЛОК ДВИГАТЕЛЯ В СБОРЕ',
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'TF-EXH-2024-001',
@@ -15,7 +15,7 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 2,
-            image: '/web_frontend/images/2.jpg',        
+            image: '/images/2.jpg',        
             part_name: 'ТРАНСМИССИОННЫЙ ТОРМОЗ',
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'QX-EXH-2024-005',
@@ -36,7 +36,7 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 3,
-            image: '/web_frontend/images/3.jpg',        
+            image: '/images/3.jpg',        
             part_name: 'ВЫХЛОПНАЯ ТРУБА',
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'ST-EXH-2024-004',
@@ -57,7 +57,7 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 4,
-            image: '/web_frontend/images/4.jpg',        
+            image: '/images/4.jpg',        
             part_name: 'ТОПЛИВНЫЙ БАК',
             specification: '2.5L 6 CYL ДИЗЕЛЬ',
             oem_number: 'TF-EXH-2024-001',
@@ -84,7 +84,7 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 5,
-            image: '/web_frontend/images/5.jpg',        
+            image: '/images/5.jpg',        
             part_name: 'НАКЛАДКИ ПОРОГОВ',
             specification: 'ЛЮБАЯ',
             oem_number: 'TS-EXH-2024-003',
@@ -103,7 +103,7 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 6,
-            image: '/web_frontend/images/6.jpg',        
+            image: '/images/6.jpg',        
             part_name: 'СБОРКА РАМЫ',
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'DX-EXH-2024-006',
