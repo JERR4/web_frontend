@@ -1,11 +1,12 @@
-import { PartResult } from "./partsStorageApi";
+import { dest_root } from "../../target_config.ts";
 
-export const PARTS_MOCK: PartResult = {
+export const PARTS_MOCK  = {
     parts:[
         {
             id: 1,
-            image: '/web_frontend/images/1.jpg',
+            image: `${dest_root}/images/1.jpg`,
             part_name: 'БЛОК ДВИГАТЕЛЯ В СБОРЕ',
+            active_add: true,
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'TF-EXH-2024-001',
             short_description: 'Блок двигателя в сборе для V8 EFI БЕНЗИН.',
@@ -15,8 +16,9 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 2,
-            image: '/web_frontend/images/2.jpg',        
+            image: `${dest_root}/images/2.jpg`,      
             part_name: 'ТРАНСМИССИОННЫЙ ТОРМОЗ',
+            active_add: true,
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'QX-EXH-2024-005',
             short_description: 'Трансмиссионный тормоз для V8 EFI БЕНЗИН.',
@@ -36,8 +38,9 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 3,
-            image: '/web_frontend/images/3.jpg',        
+            image: `${dest_root}/images/3.jpg`,        
             part_name: 'ВЫХЛОПНАЯ ТРУБА',
+            active_add: true,
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'ST-EXH-2024-004',
             short_description: 'Выхлопная труба для V8 EFI БЕНЗИН.',
@@ -57,8 +60,9 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 4,
-            image: '/web_frontend/images/4.jpg',        
+            image: `${dest_root}/images/4.jpg`,
             part_name: 'ТОПЛИВНЫЙ БАК',
+            active_add: true,
             specification: '2.5L 6 CYL ДИЗЕЛЬ',
             oem_number: 'TF-EXH-2024-001',
             short_description: 'Сборка топливного бака и сопутствующие детали для 2.5L 6 CYL ДИЗЕЛЬ.',
@@ -84,8 +88,9 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 5,
-            image: '/web_frontend/images/5.jpg',        
+            image: `${dest_root}/images/5.jpg`,       
             part_name: 'НАКЛАДКИ ПОРОГОВ',
+            active_add: true,
             specification: 'ЛЮБАЯ',
             oem_number: 'TS-EXH-2024-003',
             short_description: 'Накладки порогов для кузова любой конфигурации.',
@@ -103,8 +108,9 @@ export const PARTS_MOCK: PartResult = {
         },
         {
             id: 6,
-            image: '/web_frontend/images/6.jpg',        
+            image: `${dest_root}/images/6.jpg`,  
             part_name: 'СБОРКА РАМЫ',
+                        active_add: true,
             specification: 'V8 EFI БЕНЗИН',
             oem_number: 'DX-EXH-2024-006',
             short_description: 'Сборка рамы для V8 EFI бензин.',

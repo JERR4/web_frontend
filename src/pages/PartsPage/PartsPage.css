@@ -36,6 +36,13 @@
     margin-left: auto;
 }
 
+.truck {
+    display: none;
+}
+.header-truck {
+    text-align: center;
+}
+
 .parts-data {
     min-height: 83.3vh; 
     padding-left: 70px;
@@ -47,7 +54,7 @@
     margin-top: auto;
 }
 
-.input {
+.name-input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +84,6 @@
         padding-right: 50px;
     }
 }
-
 @media (max-width: 770px) {
     .head {
         align-items: flex-start;
@@ -106,12 +112,34 @@
         transform: none;
         margin-bottom: 10px;
     }
-}
 
+    .header-truck {
+        display: flex;
+        justify-content: space-between;
+    }
+    .truck {
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .truck-bg {
+        height: 40px;
+        width: 50px;
+        background-color: #212539;
+        border-radius: 4px;
+    }
+    .truck-icon {
+        height: 100%;
+        object-fit: cover;
+    }
+    .shipment button,
+    .shipment .pill {
+        display: none;
+    }
+}
 @media (max-width: 675px) {
     .parts-data {
         padding-left: 30px;
         padding-right: 30px;
     }
 }
-

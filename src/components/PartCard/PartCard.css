@@ -42,6 +42,19 @@
     margin-bottom: 8px;
   }
 
+  .add-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .min-width-button {
+    min-width: 100px;
+  }
+  
+  
   @media (max-width: 675px) {
     .part-card  {
         flex-direction: column;

@@ -1,11 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from './pages/HomePage/HomePage';
 import PartsPage from './pages/PartsPage/PartsPage';
+import  LoginPage  from './pages/LoginPage/LoginPage';
+import  RegisterPage  from './pages/RegisterPage/RegisterPage';
 import { PartPage } from './pages/PartPage/PartPage';
+import { ProfilePage } from './pages/ProfilePage/ProfilePage';
 import { ROUTES } from "./Routes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BasicNavbar from './components/navbar/navbar';
 import { useEffect } from "react";
+import ShipmentPage from "./pages/ShipmentPage/ShipmentPage";
+import ShipmentsPage from "./pages/ShipmentsPage/ShipmentsPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import ForbiddenPage from "./pages/ForbiddenPage/ForbiddenPage";
 
 function App() {
   useEffect(() => {
@@ -32,7 +39,14 @@ function App() {
           <Routes>
             <Route path={ROUTES.HOME} index element={<HomePage />} />
             <Route path={ROUTES.PARTS} element={<PartsPage />} />
+            <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+            <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
             <Route path={`${ROUTES.PARTS}/:id`} element={<PartPage />} />
+            <Route path={`${ROUTES.PROFILE}`} element={<ProfilePage />} />
+            <Route path={`${ROUTES.SHIPMENTS}/:id`} element={<ShipmentPage />} />
+            <Route path={`${ROUTES.SHIPMENTS}`} element={<ShipmentsPage />} />
+            <Route path={`${ROUTES.PAGE403}`} element={<ForbiddenPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
       </div>

@@ -1,21 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
-const isTauri = process.env.TAURI_PLATFORM !== undefined;
+import {api_proxy_addr, dest_root} from "./target_config"
 
 export default defineConfig({
   plugins: [react()],
-  base: "/web_frontend",
+  base: dest_root,
   server: {
     port: 3000,
     host: '0.0.0.0',
-    proxy: !isTauri
-      ? {
-          "/api": {
-            target: "http://192.168.1.45:8000",
-            changeOrigin: true,
-          },
-        }
-      : undefined,
+    proxy: {
+      "/api": {
+        target: api_proxy_addr,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/"),
+      },
+    },
   },
 });
