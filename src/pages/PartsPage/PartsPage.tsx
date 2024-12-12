@@ -74,30 +74,6 @@ const PartsPage: FC = () => {
           </Col>
           <Col md={4} className="header-truck">
             <h2>Комплектующие</h2>
-            <div className="truck">
-              <div className="truck-bg">
-                <img src="/web_frontend/images/truck.png" alt="Грузовик" className="truck-icon"/>
-              </div>
-              <span 
-                className="truck-pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
-                style={{ backgroundColor: "#3f8dfb" }}
-              >
-                3
-              </span>
-            </div>
-          </Col>
-          <Col md={4} className="shipment button d-flex justify-content-end">
-            <div className="orders-button">
-              <button type="submit" className="btn btn-outline-dark">
-                В обработке
-              </button>
-              <span 
-                className="pill position-absolute top-0 start-100 translate-middle badge rounded-pill" 
-                style={{ backgroundColor: "#3f8dfb" }}
-              >
-                3
-              </span>
-            </div>
           </Col>
         </Row>
         <div className="data">

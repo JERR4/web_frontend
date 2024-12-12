@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
-import {dest_root} from "../../../target_config"
-import "./HomePage.css"; 
+import { dest_root } from "../../../target_config";
+import "./HomePage.css";
 
 export const HomePage: FC = () => {
   useEffect(() => {
@@ -25,9 +25,6 @@ export const HomePage: FC = () => {
           Упростите складские операции и повысите эффективность работы с
           комплектующими
         </p>
-        <Link to={ROUTES.PARTS}>
-          <Button variant="light" className="btn-transparent">Просмотр комплектующих</Button>
-        </Link>
       </div>
       <footer className="home-page-custom-footer">
         <span className="footer-text full-text">

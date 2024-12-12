@@ -15,14 +15,12 @@ export const BasicNavbar = () => {
         <div className='nav__links'>
           <NavLink to={ROUTES.HOME} className='nav__link' end>Главная</NavLink>
           <NavLink to={ROUTES.PARTS} className='nav__link' end>Товары</NavLink>
-          <NavLink to='/orders' className='nav__link' end>Отправки</NavLink>
         </div>
           <div className='nav__mobile-wrapper' onClick={(event) => event.currentTarget.classList.toggle('active')}>
             <div className='nav__mobile-target' />
             <div className='nav__mobile-menu'>
               <NavLink to={ROUTES.HOME} className='nav__link' end>Главная</NavLink>
               <NavLink to={ROUTES.PARTS} className='nav__link' end>Товары</NavLink>
-              <NavLink to='/orders' className='nav__link' end>Отправки</NavLink>
             </div>
           </div>
       </div>
